@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.css" rel="stylesheet" crossorigin="anonymous"/>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+             <div class="jumbotron">
+                <h1 class="bottomsUp title"><span id="city">San Francisco</span></h1>
+                <p>
+                    <em><span id="location">California, United States of America</span></em>
+                </p>
+                <div id="weatherIcon">
+                    <i class="wi wi-thunderstorm"></i>
+                </div>
+                 <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-5 projectedTemp" id="temperatures">
+                        <p id="degrees">
+                            <span id="temp">63</span>&deg; <span id="degreeType" class="degType">F</span>
+                        </p>
+                        <div class="row">
+                            <div class="otherInfo">
+                                <p>
+                                    High: <span id="high0">45</span>&deg;<span class="degType">F</span><br />
+                                    Low: <span id="low0">25</span>&deg;<span class="degType">F</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <p id="weatherType">
+                            Stormy
+                        </p>
+                        <div class="row">
+                            <div class="otherInfo">
+                                <p>
+                                    Sunrise: <span id="sunrise">7:22am</span><br />
+                                    Sunset: <span id="sunset">7:22pm</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                </div>
+                <div class="row" id="#forecast">
+                    <div class="col-sm-4 forecast" id="day1">
+                        <p>
+                            <span class="date" id="date1">Saturday</span><br />
+                            <span class="weatherIcons forecastIcons" id="icon1"><i class="wi wi-cloudy"></i></span><br />
+                            <span class="projectedTemp">High: <span id="high1">64</span>&deg; <span class="degType">F</span></span>
+                            <span class="projectedTemp">Low: <span id="low1">59</span>&deg;<span class="degType">F</span></span>
+                        </p>
+                    </div>
+                     <div class="col-sm-4 forecast" id="day2">
+                        <p>
+                            <span class="date" id="date2">Sunday</span><br />
+                            <span class="weatherIcons" id="icon2"><i class="wi wi-day-rain"></i></span><br />
+                            <span class="projectedTemp">High: <span id="high2">56</span>&deg; <span class="degType">F</span></span>
+                            <span class="projectedTemp">Low: <span id="low2">45</span>&deg;<span class="degType">F</span></span>
+                        </p>
+                    </div>
+                    <div class="col-sm-4 forecast" id="day3">
+                        <p>
+                           <span class="date" id="date3">Monday</span><br />
+                            <span class="weatherIcons forecastIcons" id="icon3"><i class="wi wi-day-sunny"></i></span><br />
+                            <span class="projectedTemp">High: <span id="high3">73</span>&deg; <span class="degType">F</span></span>
+                            <span class="projectedTemp">Low: <span id="low3">60</span>&deg;<span class="degType">F</span></span>
+                        </p>
+                    </div>
+                </div>
+                <p id="credits">Weather API: <a href="https://www.apixu.com/" target="_blank">Apixu</a> || Background Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a> || Weather Icons Library: <a href="https://github.com/erikflowers/weather-icons/blob/master/README.md">erikflowers</a></p>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

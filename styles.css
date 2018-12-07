@@ -1,0 +1,88 @@
+/* Page Format Styles */
+html, body, .container {
+    min-height: 100%;
+}
+
+.container {
+    background: url("https://images.unsplash.com/photo-1507880572231-f85401ce76e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=744e1c6d6e4de2332c93d168eb6b19f0&auto=format&fit=crop&w=1426&q=80") no-repeat center center fixed;
+    position: absolute;
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+}
+
+.jumbotron {
+    margin-top: 1%;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-bottom: 0px;
+    background: rgba(360,360,360, 0.8);
+}
+
+/* Current Weather/Location Styles */
+h1.title {
+    font-size: 5vw;
+    margin-top: 0px;
+    margin-bottom: -5px;
+}
+
+div.otherInfo, div.otherInfo > p, #location {
+    margin: 0px;
+    font-size: 1vw;
+}
+
+#weatherIcon {
+    font-size: 8vw;
+}
+
+#degrees, #weatherType {
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+#degreeType:hover {
+    color: #50add8;
+}
+
+#degreeType {
+    color: #2562a6;
+}
+
+/* Forecast Styles */
+div.forecast {
+    margin-top: 3vw;
+}
+
+.projectedTemp {
+    font-size: .85vw;
+}
+
+.date {
+    font-size: 1.25vw;
+}
+
+span.weatherIcons > img {
+    height: 5vw;
+}
+
+span.weatherIcons > i {
+    padding: 5px;
+    margin: 5px;
+}
+
+#day2 {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+/* Credit Styles */
+#credits {
+    font-size: .75vw;
+    margin-top: 5%;
+    padding: 5px;
+}
+
+    #credits > a {
+        font-weight: bold;
+        color: #525a66;
+    }
