@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.css" rel="stylesheet" crossorigin="anonymous"/>
         <link href="styles.css" rel="stylesheet" />
@@ -12,43 +13,43 @@
                 <p>
                     <em><span id="location">California, United States of America</span></em>
                 </p>
-                <div id="weatherIcon">
-                    <i class="wi wi-thunderstorm"></i>
-                </div>
-                 <div class="row">
-                    <div class="col-sm-1">
+                <div id="today">
+                    <div id="weatherIcon">
+                        <i class="wi wi-thunderstorm"></i>
                     </div>
-                    <div class="col-sm-5 projectedTemp" id="temperatures">
-                        <p id="degrees">
-                            <span id="temp">63</span>&deg; <span id="degreeType" class="degType">F</span>
-                        </p>
-                        <div class="row">
-                            <div class="otherInfo">
-                                <p>
-                                    High: <span id="high0">45</span>&deg;<span class="degType">F</span><br />
-                                    Low: <span id="low0">25</span>&deg;<span class="degType">F</span>
-                                </p>
+                    <div class="row">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-5 projectedTemp" id="temperatures">
+                            <p id="degrees">
+                                <span id="temp">63</span>&deg; <span id="degreeType" class="degType">F</span>
+                            </p>
+                            <div class="row">
+                                <div class="otherInfo">
+                                    <p>
+                                        High: <span id="high0">45</span>&deg;<span class="degType">F</span><br />
+                                        Low: <span id="low0">25</span>&deg;<span class="degType">F</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <p id="weatherType">
-                            Stormy
-                        </p>
-                        <div class="row">
-                            <div class="otherInfo">
-                                <p>
-                                    Sunrise: <span id="sunrise">7:22am</span><br />
-                                    Sunset: <span id="sunset">7:22pm</span>
-                                </p>
+                        <div class="col-sm-5">
+                            <p id="weatherType">
+                                Stormy
+                            </p>
+                            <div class="row">
+                                <div class="otherInfo">
+                                    <p>
+                                        Sunrise: <span id="sunrise">7:22am</span><br />
+                                        Sunset: <span id="sunset">7:22pm</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-1">
                     </div>
                 </div>
                 <div class="row" id="#forecast">
-                    <div class="col-sm-4 forecast" id="day1">
+                    <div class="col-sm-12 forecast" id="day1">
                         <p>
                             <span class="date" id="date1">Saturday</span><br />
                             <span class="weatherIcons forecastIcons" id="icon1"><i class="wi wi-cloudy"></i></span><br />
@@ -56,7 +57,7 @@
                             <span class="projectedTemp">Low: <span id="low1">59</span>&deg;<span class="degType">F</span></span>
                         </p>
                     </div>
-                     <div class="col-sm-4 forecast" id="day2">
+                     <div class="col-sm-12 forecast" id="day2">
                         <p>
                             <span class="date" id="date2">Sunday</span><br />
                             <span class="weatherIcons" id="icon2"><i class="wi wi-day-rain"></i></span><br />
@@ -64,7 +65,7 @@
                             <span class="projectedTemp">Low: <span id="low2">45</span>&deg;<span class="degType">F</span></span>
                         </p>
                     </div>
-                    <div class="col-sm-4 forecast" id="day3">
+                    <div class="col-sm-12 forecast" id="day3">
                         <p>
                            <span class="date" id="date3">Monday</span><br />
                             <span class="weatherIcons forecastIcons" id="icon3"><i class="wi wi-day-sunny"></i></span><br />

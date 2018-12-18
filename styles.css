@@ -50,15 +50,27 @@ div.otherInfo, div.otherInfo > p, #location {
 
 /* Forecast Styles */
 div.forecast {
-    margin-top: 3vw;
+    margin: 0;
+    margin-top: 2%;
+    line-height: 1.75vw;
+    text-align: center;
+}
+
+div.forecast > p {
+    background: rgba(0,0,0, 0.1);
+    border-radius: 5px;
+    max-width: 70%;
+    margin: auto;
+    padding: 15px;
 }
 
 .projectedTemp {
-    font-size: .85vw;
+    font-size: 1vw;
 }
 
 .date {
     font-size: 1.25vw;
+    font-weight: bold;
 }
 
 span.weatherIcons > img {
@@ -70,19 +82,63 @@ span.weatherIcons > i {
     margin: 5px;
 }
 
-#day2 {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+#day1 {
+    margin-top: 5%;
 }
 
 /* Credit Styles */
 #credits {
-    font-size: .75vw;
+    font-size: 1vw;
     margin-top: 5%;
     padding: 5px;
 }
 
-    #credits > a {
-        font-weight: bold;
-        color: #525a66;
+#credits > a {
+    font-weight: bold;
+    color: #525a66;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .jumbotron p {
+        margin-bottom: 0;
     }
+    
+    #today {
+        background: rgba(0,0,0,0.1);
+        padding: 5px;
+        border: 2px solid rgba(0,0,0,0.12);
+        max-width: 70%;
+        margin: auto;
+        border-radius: 5px;
+    }
+
+    div.otherInfo, div.otherInfo > p, #location {
+        font-size: 2vw;
+        margin-top: 0;
+    }
+    
+    #degrees, #weatherType {
+        font-size: 2.5vw;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .projectedTemp {
+        font-size: 2vw;
+    }
+
+    .date {
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    #credits {
+        font-size: 1.85vw;
+    }
+
+    #day1 {
+        margin-top: 3%;
+    }
+
+}
