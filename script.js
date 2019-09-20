@@ -84,34 +84,62 @@ function changeTemp() {
     });
 }
 
-//Function to change background image/icon depending on weather
+//Function to change background image/icon depending on weather. It pulls the current weather type from the div "Weather Type". An object is used to map condition
+//types to icons and backgrounds that match. The currentConditionType is used as the variable to access the properties associated with the key type. If the current
+//condition does not exist in the list, the variable is set to default and the deafult icon and background are used to prevent an error.
 function changeBackground() {
-    var backgroundURL, iconClass, currentCond = $("#weatherType").text().toLowerCase();
+    var backgroundURL, iconClass, currentConditionType = $("#weatherType").text().toLowerCase();
+    var currConditionsList = {
+        sun:{
+            icon: "wi wi-day-sunny",
+            background:"https://images.unsplash.com/photo-1444090542259-0af8fa96557e?ixlib=rb-0.3.5&s=f034298e3c1cc2a2a532c969a69bbdfc&auto=format&fit=crop&w=1350&q=80"
+        },
+        mist:{
+            icon:"wi wi-fog",
+            background: "https://images.unsplash.com/photo-1455656678494-4d1b5f3e7ad4?ixlib=rb-0.3.5&s=f898f9cda6c8c3e0b2bf34482f7b9139&auto=format&fit=crop&w=1950&q=80"
+        },
+        fog:{
+            icon:"wi wi-fog",
+            background: "https://images.unsplash.com/photo-1455656678494-4d1b5f3e7ad4?ixlib=rb-0.3.5&s=f898f9cda6c8c3e0b2bf34482f7b9139&auto=format&fit=crop&w=1950&q=80"
 
-    if (currentCond.indexOf("sun") >= 0) {
-        backgroundURL = "https://images.unsplash.com/photo-1444090542259-0af8fa96557e?ixlib=rb-0.3.5&s=f034298e3c1cc2a2a532c969a69bbdfc&auto=format&fit=crop&w=1350&q=80";
-        iconClass = "wi wi-day-sunny";
-    } else if (currentCond.indexOf("mist") >= 0 || currentCond.indexOf("fog") >= 0 || currentCond.indexOf("overcast") >= 0) {
-        backgroundURL = "https://images.unsplash.com/photo-1455656678494-4d1b5f3e7ad4?ixlib=rb-0.3.5&s=f898f9cda6c8c3e0b2bf34482f7b9139&auto=format&fit=crop&w=1950&q=80";
-        iconClass = "wi wi-fog";
-    } else if (currentCond.indexOf("rain") >= 0) {
-        backgroundURL = "https://images.unsplash.com/photo-1485797460056-2310c82d1213?ixlib=rb-0.3.5&s=01d1f4081a7cfb7eb572bca23cdf8df8&auto=format&fit=crop&w=1350&q=80";
-        iconClass = "wi wi-rain";
-    } else if (currentCond.indexOf("cloud") >= 0) {
-        backgroundURL = "https://images.unsplash.com/photo-1430950716796-677ecbc99485?ixlib=rb-0.3.5&s=1e4dfc341b01a40c6bb6f83d1081569c&auto=format&fit=crop&w=1950&q=80";
-        iconClass = "wi wi-cloudy";
-    } else if (currentCond.indexOf("snow") >= 0 || currentCond.indexOf("ice") >= 0) {
-        backgroundURL = "https://images.unsplash.com/photo-1448724133127-81fbec83d1ae?ixlib=rb-0.3.5&s=642127541da66cdb859c1e537a10a735&auto=format&fit=crop&w=1950&q=80";
-        iconClass = "wi wi-snowflake-cold";
-    } else if (currentCond.indexOf("clear") >= 0) {
-        backgroundURL = "https://images.unsplash.com/photo-1436984865625-d278e0c37da6?ixlib=rb-0.3.5&s=f7befefb624d88d78860c95c913c1bb9&auto=format&fit=crop&w=2134&q=80";
-        iconClass = "wi wi-day-sunny";
-    } else {
-        backgroundURL = "https://images.unsplash.com/photo-1507880572231-f85401ce76e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=744e1c6d6e4de2332c93d168eb6b19f0&auto=format&fit=crop&w=1426&q=80";
-        iconClass = "wi wi-cloud";
+        },
+        overcast: {
+            icon:"wi wi-fog",
+            background: "https://images.unsplash.com/photo-1455656678494-4d1b5f3e7ad4?ixlib=rb-0.3.5&s=f898f9cda6c8c3e0b2bf34482f7b9139&auto=format&fit=crop&w=1950&q=80"
+        },
+        rain:{
+            icon: "wi wi-rain",
+            background: "https://images.unsplash.com/photo-1485797460056-2310c82d1213?ixlib=rb-0.3.5&s=01d1f4081a7cfb7eb572bca23cdf8df8&auto=format&fit=crop&w=1350&q=80"
+        },
+        cloud: {
+            icon: "wi wi-cloudy",
+            background: "https://images.unsplash.com/photo-1430950716796-677ecbc99485?ixlib=rb-0.3.5&s=1e4dfc341b01a40c6bb6f83d1081569c&auto=format&fit=crop&w=1950&q=80" 
+        },
+        snow: {
+            icon: "wi wi-snowflake-cold",
+            background: "https://images.unsplash.com/photo-1448724133127-81fbec83d1ae?ixlib=rb-0.3.5&s=642127541da66cdb859c1e537a10a735&auto=format&fit=crop&w=1950&q=80"
+        },
+        ice: {
+            icon: "wi wi-snowflake-cold",
+            background: "https://images.unsplash.com/photo-1448724133127-81fbec83d1ae?ixlib=rb-0.3.5&s=642127541da66cdb859c1e537a10a735&auto=format&fit=crop&w=1950&q=80"
+        },
+        clear: {
+            icon: "wi wi-day-sunny",
+            background: "https://images.unsplash.com/photo-1436984865625-d278e0c37da6?ixlib=rb-0.3.5&s=f7befefb624d88d78860c95c913c1bb9&auto=format&fit=crop&w=2134&q=80"
+        },
+        default: {
+            icon: "wi wi-cloud",
+            background: "https://images.unsplash.com/photo-1507880572231-f85401ce76e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=744e1c6d6e4de2332c93d168eb6b19f0&auto=format&fit=crop&w=1426&q=80" 
+        }
+
+    };
+
+    if(!currConditionsList.hasOwnProperty(currentConditionType)){
+        currentConditionType = "default";
     }
-    $(".container").css({ "background": "url('" + backgroundURL + "') no-repeat center center fixed", "background-size": "cover" });
-    $("#weatherIcon").html("<i class='" + iconClass + "'></i>");
+
+    $(".container").css({ "background": "url('" + currConditionsList[currentConditionType].background + "') no-repeat center center fixed", "background-size": "cover" });
+    $("#weatherIcon").html("<i class='" + currConditionsList[currentConditionType].icon + "'></i>");
 }
 
 //Change the icons for the forecasted days
